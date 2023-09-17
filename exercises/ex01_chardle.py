@@ -56,6 +56,6 @@ if char_count == 1:
     print(str(char_count) + " instance of " + single_char + " found in " + word)
 else:
     if char_count != 0:
-              print(str(char_count) + " instances of " + single_char + " found in " + word)
+        print(str(char_count) + " instances of " + single_char + " found in " + word)
     else:
-              print("No instances of " + single_char + " found in " + word)
+        print("No instances of " + single_char + " found in " + word)
