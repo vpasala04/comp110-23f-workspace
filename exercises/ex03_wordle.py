@@ -5,8 +5,9 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
+
 def contains_char(secret_word: str, search_char: str) -> bool:
-    """Returns whether a character from word matches any character in secret_word"""
+    """Returns whether a character from word matches any character in secret_word."""
     assert len(search_char) == 1
     secret_word_idx: int = 0
     while secret_word_idx < len(secret_word):
@@ -15,8 +16,9 @@ def contains_char(secret_word: str, search_char: str) -> bool:
         secret_word_idx = secret_word_idx + 1
     return False
 
+
 def emojified(user_guess: str, secret_word: str) -> str:
-    """Returns the boxes indicating green,yellow or white codification by comparing the user_guess and secret_word strings"""
+    """Returns the boxes indicating green,yellow or white codification by comparing the user_guess and secret_word strings."""
     assert len(user_guess) == len(secret_word)
     boxes: str = ""
     user_guess_idx: int = 0
@@ -30,15 +32,17 @@ def emojified(user_guess: str, secret_word: str) -> str:
         user_guess_idx = user_guess_idx + 1
     return boxes
 
+
 def input_guess(expected_len: int) -> str:
-    """Determines length of the user's guess for secret_word and prompts user for the correct length"""
+    """Determines length of the user's guess for secret_word and prompts user for the correct length."""
     user_guess: str = input(f"Enter a {expected_len} character word: ")
     while len(user_guess) != expected_len:
         user_guess = input(f"That wasn't {expected_len} chars! Try again: ")
     return user_guess
 
+
 def main() -> None:
-    """Establishes secret_word and keeps track of how many turns the user has spent, whether the user won the game, and overall flow of the wordle game"""
+    """Establishes secret_word and keeps track of how many turns the user has spent, whether the user won the game, and overall flow of the wordle game."""
     secret_word: str = "codes"
     secret_word_idx: int = 0
     current_turn: int = 1
@@ -48,11 +52,11 @@ def main() -> None:
     correct_boxes: str = ""
     correct_ans: bool = False
     secret_word_len: int = len(secret_word)
-    #Establising the correct emoji box string
+    # Establising the correct emoji box string
     while secret_word_idx < secret_word_len:
         correct_boxes = correct_boxes + GREEN_BOX
         secret_word_idx = secret_word_idx + 1
-    #Comparing user_guess and secret_word and coordinating user guesses with turns
+    # Comparing user_guess and secret_word and coordinating user guesses with turns
     while (current_turn <= max_turns) and (not correct_ans):
         print(f"=== Turn {current_turn}/{max_turns} ===")
         user_guess = input_guess(len(secret_word))
