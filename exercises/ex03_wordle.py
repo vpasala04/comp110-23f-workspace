@@ -31,10 +31,10 @@ def emojified(user_guess: str, secret_word: str) -> str:
     return boxes
 
 def input_guess(expected_len: int) -> str:
-    """Determines length of the user's guess for secret_word"""
+    """Determines length of the user's guess for secret_word and prompts user for the correct length"""
     user_guess: str = input(f"Enter a {expected_len} character word: ")
     while len(user_guess) != expected_len:
-        user_guess: str = input(f"That wasn't {expected_len} chars! Try again: ")
+        user_guess = input(f"That wasn't {expected_len} chars! Try again: ")
     return user_guess
 
 def main() -> None:
