@@ -1,5 +1,5 @@
-"""EX02 - One Shot Wordle"""
-__author__ = 730616700
+"""EX02 - One Shot Wordle."""
+__author__ = "730616700"
 
 secret_word: str = "python"
 secret_idx: int = 0
@@ -12,7 +12,7 @@ GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
 while len(word) != len(secret_word):
-    word: str = input(f"That was not {len(secret_word)} letters! Try again: ")
+    word = input(f"That was not {len(secret_word)} letters! Try again: ")
 
 while word_idx < len(word):
     if word[word_idx] == secret_word[word_idx]:
