@@ -68,5 +68,7 @@ def main() -> None:
         current_turn = current_turn + 1
     if not correct_ans:
         print(f"X/{max_turns} - Sorry, try again tomorrow!")
+
+
 if __name__ == "__main__":
     main()
