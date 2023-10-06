@@ -7,6 +7,7 @@ def all(ints_list: list[int], value: int) -> bool:
     """Check if the integers in a given list match a given integer value."""
     list_idx: int = 0
     if len(ints_list) == 0:
+        # exits loop if list is empty
         return False
     while list_idx < len(ints_list):
         if ints_list[list_idx] != value:
@@ -33,6 +34,7 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
     list_idx: int = 0
     result: bool = True
     if len(list1) != len(list2):
+        # exists loop if the length of both given lists is not the same
         return False
     while (list_idx < len(list1)):
         if list1[list_idx] != list2[list_idx]:
