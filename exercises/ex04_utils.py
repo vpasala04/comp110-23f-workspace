@@ -2,20 +2,21 @@
 
 __author__ = "730616700"
 
+
 def all(ints_list: list[int], value: int) -> bool:
+    """Check if the integers in a given list match a given integer value."""
     list_idx: int = 0
-    result: bool = False
     if len(ints_list) == 0:
-        return result
+        return False
     while list_idx < len(ints_list):
-        if ints_list[list_idx] == value:
-            result = True
-        else:
-            result = False
+        if ints_list[list_idx] != value:
+            return False
         list_idx += 1
-    return result
+    return True
+
 
 def max(input: list[int]) -> int:
+    """Returns the largest integer in a given list."""
     max_value: int = input[0]
     list_idx: int = 0
     if len(input) == 0:
@@ -26,18 +27,15 @@ def max(input: list[int]) -> int:
         list_idx += 1
     return max_value
 
-def is_equal(list1: list[int], list2: list[int]) -> bool:
-    list1_idx: int = 0
-    list2_idx: int = 0
-    result: bool = False
-    while (list1_idx < len(list1)):
-        if list1[list1_idx] == list2[list2_idx]:
-            result = True
-        else:
-            result = False
-        list1_idx += 1
-    return result
 
-print(is_equal([1, 0, 1], [1, 0, 1]))
-print(is_equal([1, 1, 0], [1, 0, 1]))
-print(is_equal([1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]))
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Determine if two intger lists have matching elements at each index."""
+    list_idx: int = 0
+    result: bool = True
+    if len(list1) != len(list2):
+        return False
+    while (list_idx < len(list1)):
+        if list1[list_idx] != list2[list_idx]:
+            result = False
+        list_idx += 1
+    return result
