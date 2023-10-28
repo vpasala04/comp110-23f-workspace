@@ -11,6 +11,6 @@ def zip(keys: list[str], values: list[int]) -> dict[str, int]:
         full_dict = {}
         return full_dict
     for item in keys:
-        dict[item] = values[idx]
+        full_dict[item] = values[idx]
         idx = idx + 1
     return full_dict
