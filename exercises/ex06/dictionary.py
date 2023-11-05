@@ -4,7 +4,7 @@ __author__ = "730616700"
 
 
 def invert(input_dict: dict[str, str]) -> dict[str, str]:
-    """Inverts the keys and values of a list."""
+    """Inverts the keys and values of a dict."""
     inverted_dict: dict[str, str] = {}
     for key in input_dict:
         if input_dict[key] in inverted_dict:
@@ -28,6 +28,8 @@ def favorite_color(colors_dict: dict[str, str]) -> str:
         if color_count[color] > max_count:
             max_count = color_count[color]
             final_color = color
+        elif final_color == "":
+            final_color = colors_dict[key]
     return final_color
 
 
